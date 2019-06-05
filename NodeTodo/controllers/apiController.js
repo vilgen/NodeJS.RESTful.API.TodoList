@@ -34,6 +34,7 @@ module.exports = function(app){
     app.post('/api/todo', function(req, res){
         
         //update record if exists already
+        //console.log(req.body);
         if(req.body.id){
             Todos.findByIdAndUpdate(req.body.id, {
                 todo: req.body.todo, isDone: req.body.isDone,
